@@ -255,6 +255,7 @@ spec:
       displayName: KubeVirt
       description: KubeVirt
 
+    required:
     - name: cdis.cdi.kubevirt.io
       version: v1alpha1
       kind: CDI
