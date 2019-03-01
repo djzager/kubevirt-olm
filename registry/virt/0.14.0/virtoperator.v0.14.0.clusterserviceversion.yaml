@@ -1,11 +1,11 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: ClusterServiceVersion
 metadata:
-  name: kubevirtoperator.v0.14.0
+  name: virtoperator.v0.14.0
   annotations:
     tectonic-visibility: ocs
 spec:
-  displayName: KubeVirt
+  displayName: Virt
   description: |-
      KubeVirt enables the migration of existing virtualized workloads directly into the development workflows supported by Kubernetes.
      This provides a path to more rapid application modernization by:
@@ -254,16 +254,3 @@ spec:
       kind: KubeVirt
       displayName: KubeVirt
       description: KubeVirt
-
-    - name: cdis.cdi.kubevirt.io
-      version: v1alpha1
-      kind: CDI
-      displayName: CDI Application
-      description: Represents an instance of a CDI application
-
-    # Commenting out until we have an operator that provides them in our catalog
-    # - name: embercsis.ember-csi.io
-    #   version: v1alpha1
-    #   kind: EmberCSI
-    #   displayName: EmberCSI Application
-    #   description: Represents an instance of a EmberCSI application

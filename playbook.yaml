@@ -1,0 +1,23 @@
+---
+
+- hosts: localhost
+  vars:
+    state: present
+  tasks:
+  - name: Kubevirt namespace state={{ state }}
+    k8s:
+      state: "{{ state }}"
+      definition:
+        kind: Namespace
+        metadata:
+          name: kubevirt
+
+  - name: Kubevirt operatorgroup state={{ state }}
+    k8s:
+      state: "{{ state }}"
+      definition: "{{ lookup('file', 'deploy/kubevirt-operator.operatorgroup.yaml') | from_yaml }}"
+
+  - name: Kubevirt Operators Catalog Source state={{ state }}
+    k8s:
+      state: "{{ state }}"
+      definition: "{{ lookup('file', 'deploy/kubevirt-operator.catalogsource.yaml') | from_yaml }}"

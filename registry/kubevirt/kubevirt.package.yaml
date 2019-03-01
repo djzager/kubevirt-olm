@@ -1,4 +1,4 @@
-packageName: kubevirtoperator
+packageName: kubevirt
 channels:
 - name: alpha
-  currentCSV: kubevirtoperator.v0.14.0
+  currentCSV: kubevirt.v0.1.0
