@@ -10,8 +10,8 @@ Playground for demonstrating KubeVirt in OLM
    [lveyde](https://hub.docker.com/r/lveyde/kubevirt-operators/tags) or
    [djzager](https://hub.docker.com/r/djzager/kubevirt-operators/tags) that have
    already been built.
-1. Update the `kubevirt-operator.catalogsource.yaml` with your container image
-   of choice. Want to know more about the base container image? [check this
+1. Update the `deploy/kubevirt-operator.catalogsource.yaml` with the container image
+   of your choice. Want to know more about the base container image? [check this
    out](https://github.com/operator-framework/operator-registry/)
 1. `kubectl create -f kubevirt-operator.catalogsource.yaml` at this point you
    should be able to see the `kubevirt` and `cdi` operators in the UI under
@@ -28,7 +28,7 @@ Playground for demonstrating KubeVirt in OLM
    [here](registry/kubevirt/0.14.0/kubevirtoperator.clusterrole.yaml).
 1. In order to be able to subscribe to our operator in the `kubevirt` namespace
    we must first `kubectl create namespace kubevirt` and `kubectl create -f
-   kubevirt-operator.operatorgroup.yaml`.
+   deploy/kubevirt-operator.operatorgroup.yaml`.
 1. Now we should be able to make a subscription to our operator in the `kubevirt`
    throught the UI or by creating a subscription object. (Maybe want to add a
    subscription to this project for reference)
